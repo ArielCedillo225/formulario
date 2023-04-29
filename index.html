@@ -19,39 +19,50 @@
         <div id="inner_container">
             <div class="form_data">
                 <p>E-mail</p>
-                <input type="email">
+                <input 
+                    type="email" 
+                    id="email"
+                    name=""
+                    value=""
+                    onblur="validateState(this)">
             </div>
             <div class="form_data">
                 <p>Nombre completo</p>
-                <input type="text">
+                <input 
+                    type="text" 
+                    id="NombreCompleto"
+                    name=""
+                    value=""
+                    onblur="validateState(this)"
+                    >
             </div>
             <div class="form_data">
                 <p>Fecha Nacimiento</p>
-                <input type="date">
+                <input type="date" id="date">
             </div>
             <div class="form_data">
                 <p>Sexo</p>
-                <select name="Sexo">
-                    <option value="None">None</option>
-                    <option value="Hombre">Hombre</option>
-                    <option value="Mujer">Mujer</option>
+                <select name="Sexo" id="sex">
+                    <option value="">None</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
                 </select>
             </div>
             <div class="form_data">
                 <p>Intereses</p>
-                <input type="checkbox">Computer<br>
-                <input type="checkbox">Sports<br>
-                <input type="checkbox">Games<br>
-                <input type="checkbox">Music<br>
+                <input type="checkbox" id="interests" value="1">Computer<br>
+                <input type="checkbox" id="interests" value="2">Sports<br>
+                <input type="checkbox" id="interests" value="3">Music<br>
+                <input type="checkbox" id="interests" value="4">Games<br>
             </div>
         </div>
 
         <div class="register_div"> 
-            <input type="submit" value="Registrar">
+            <input type="submit" value="Registrar" onclick="register()">
         </div>
         
     </article>
-
+    <script src="app.js"></script>
 </body>
 
 </html>
