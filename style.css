@@ -1,7 +1,6 @@
 html{
     font-family: Verdana;
     font-size: 10px;
-}
 
 .title_card{
     margin: 0%;
@@ -39,6 +38,17 @@ html{
 .form_data{
     padding: 1rem;
     margin-left: 5rem;
+}
+
+
+td{
+    border: 1px solid;
+    margin: 10px
+}
+
+table{
+    margin: 0px;
+    padding: 0px;
 }
 
 

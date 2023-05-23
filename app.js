@@ -19,7 +19,6 @@ function validateState(element) {
 
 function validateInterests() {
     const interests = document.querySelectorAll("#interests")
-    console.log(interests)
     for (let i = 0; i < interests.length; i++) {
         if (interests[i].checked == true) {
             return true
@@ -88,7 +87,37 @@ function register() {
         sex: sex.value,
         interests: selectedInterests
     }
-    console.log(request)
+    //console.log(request)
+    
+    users.push(request)
+    //console.log("Lista de usuarios: ", users)
     alert('Registro satisfactorio')
+    showListUsers(request)
+
+    fetch('http://localhost/api-php/',{
+        method:'POST', body: JSON.stringify(request)})
+        .then(res=>result = res.json())
+        .then(data => {
+            phpUsers = data
+            console.log(phpUsers)
+        })
+        .catch(err=>console.log(err))
+}
+
+function showListUsers(request){
+    const table = document.getElementById('table_users')
+    const row = document.createElement('tr')
+    for(let prop in request){
+        const col = document.createElement('td')
+        if(prop == 'sex'){
+            col.innerHTML = request[prop] == 1 ? 'Masculino':'Femenino'
+        }
+        else{
+            col.innerHTML = request[prop]
+        }
+        
+        row.appendChild(col)
+    }
+    table.appendChild(row)
 }
 
